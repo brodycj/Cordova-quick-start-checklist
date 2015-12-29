@@ -46,6 +46,16 @@ Goal: ability to use Cordova CLI to add a plugin and get it working before deali
 - `cordova prepare` command
 - test on all desired target platform(s)
 
+## Fix iOS backup (basic configuration)
+
+Configured by `BackupWebStorage` in `config.xml`
+
+IMPORTANT: By default configuration the iOS version has iCloud backup enabled, which I think is wrong. For example, it is *NOT* allowed to store a SQLite database in iCloud backup. For more information: https://developer.apple.com/library/mac/documentation/General/Conceptual/iCloudDesignGuide/Chapters/iCloudFundametals.html
+
+The other options are to disable iOS backup or enable local backups via iTunes sync. For more information: https://cordova.apache.org/docs/en/latest/guide/platforms/ios/config.html
+
+I have already filed [Apache Cordova bug CB-9830](https://issues.apache.org/jira/browse/CB-9830) to fix the default iOS backup configuration.
+
 ## Adding sqlite plugin
 
 - add to project
